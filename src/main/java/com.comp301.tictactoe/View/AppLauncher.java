@@ -17,6 +17,10 @@ public class AppLauncher extends Application {
 
         stage.setScene(view.getScene());
         stage.setTitle("Tic-Tac-Toe");
+        stage.setMinWidth(500);
+        stage.setMaxWidth(500);
+        stage.setMinHeight(600);
+        stage.setMaxHeight(600);
         stage.show();
     }
 }

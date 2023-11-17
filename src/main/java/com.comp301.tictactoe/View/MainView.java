@@ -5,19 +5,32 @@ import com.comp301.tictactoe.Model.Model;
 import com.comp301.tictactoe.Model.ModelObserver;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Line;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+
 
 public class MainView implements FXComponent, ModelObserver {
-    //private final FXComponent ramesesview;
-    //private final FXComponent buttonview;
     private final Scene scene;
+    private final FXComponent boardview;
+    private final TitleView titleView;
+    private final Model model;
+    private ClassicMvcController controller;
 
     public MainView(Model model, ClassicMvcController controller) {
-        //his.ramesesview = new RamesesView(model, controller);
-        //this.buttonview = new ButtonView(model, controller);
+        this.boardview = new BoardView(model,controller);
+        this.titleView = new TitleView(model,controller);
+        this.model = model;
+        this.controller = controller;
+        this.model.addObserver(this);
+        this.model.make_board();
         this.scene = new Scene(render());
-        //this.scene.getStylesheets().add("main.css");
-        //model.addObserver(this);
+        this.scene.getStylesheets().add("main.css");
     }
 
     public Scene getScene() {
@@ -27,8 +40,8 @@ public class MainView implements FXComponent, ModelObserver {
     @Override
     public Parent render() {
         BorderPane pane = new BorderPane();
-        //pane.setTop(ramesesview.render());
-        //pane.setBottom(buttonview.render());
+        pane.setTop(titleView.render());
+        pane.setBottom(boardview.render());
         return pane;
     }
 
