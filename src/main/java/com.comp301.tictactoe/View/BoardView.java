@@ -7,6 +7,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
@@ -29,11 +31,19 @@ public class BoardView implements FXComponent {
 
     public Button decide_label(Button b,int x,int y) {
         if (model.isX(x,y)){
-            b.setText("X");
+            Image image = new Image("/mvc-workshopRedX.png");
+            ImageView imageView= new ImageView(image);
+            imageView.setFitHeight(50);
+            imageView.setFitWidth(50);
+            b.setGraphic(imageView);
             return b;
         }
         if (model.isO(x,y)){
-            b.setText("O");
+            Image image = new Image("/mvc-workshopGreenO.png");
+            ImageView imageView= new ImageView(image);
+            imageView.setFitHeight(50);
+            imageView.setFitWidth(50);
+            b.setGraphic(imageView);
             return b;
         }
         return b;
