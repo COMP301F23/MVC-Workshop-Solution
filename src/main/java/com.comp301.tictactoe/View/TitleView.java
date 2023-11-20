@@ -6,12 +6,13 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-
+import javafx.scene.control.Button;
+import javafx.event.ActionEvent;
 import java.awt.*;
-
+import java.awt.event.*;
 
 
 public class TitleView implements FXComponent{
@@ -30,11 +31,11 @@ public class TitleView implements FXComponent{
 
     @Override
     public Parent render() {
-        HBox pane = new HBox();
+        VBox pane = new VBox();
         pane.setPrefHeight(100);
         pane.setPrefWidth(500);
         pane.getChildren().clear();
-        pane.getStyleClass().add("hbox");
+        pane.getStyleClass().add("vbox");
         pane.setAlignment(Pos.CENTER);
 
         Label title = new Label("Welcome to Tic-Tac-Toe!");
@@ -52,6 +53,11 @@ public class TitleView implements FXComponent{
         pane2.getChildren().add(display_current_player);
 
         pane.getChildren().add(pane2);
+
+        Button reset = new Button("Reset");
+        reset.setOnAction((ActionEvent event) -> model.make_board());
+        reset.setAlignment(Pos.CENTER_LEFT);
+        pane.getChildren().add(reset);
 
         if (controller.getGameOver()) {
             String currentPlayer = model.getCurrentPlayer();

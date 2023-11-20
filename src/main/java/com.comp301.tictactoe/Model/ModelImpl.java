@@ -37,6 +37,9 @@ public class ModelImpl implements Model {
                 boardLocations[i][j] = "";
             }
         }
+        this.gameOver = false;
+        this.currentPlayer = "X";
+        notifyObservers();
     }
 
     public String[][] getBoardLocations() {
