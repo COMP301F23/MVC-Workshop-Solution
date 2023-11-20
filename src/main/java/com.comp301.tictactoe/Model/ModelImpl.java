@@ -62,15 +62,6 @@ public class ModelImpl implements Model {
         notifyObservers();
     }
 
-    public void removeX(int x, int y) {
-        if (x >= 3 || x < 0 || y >= 3 || y < 0) {
-            throw new IndexOutOfBoundsException("Outside of the board");
-        }
-        boardLocations[x][y] = "";
-        notifyObservers();
-
-    }
-
     public void addO(int x, int y) {
         if (x >= 3 || x < 0 || y >= 3 || y < 0) {
             throw new IndexOutOfBoundsException("Outside of the board");
@@ -84,14 +75,6 @@ public class ModelImpl implements Model {
             return;
         }
         switch_player();
-        notifyObservers();
-    }
-
-    public void removeO(int x, int y) {
-        if (x >= 3 || x < 0 || y >= 3 || y < 0) {
-            throw new IndexOutOfBoundsException("Outside of the board");
-        }
-        boardLocations[x][y] = "";
         notifyObservers();
     }
 
@@ -115,7 +98,6 @@ public class ModelImpl implements Model {
         return false;
     }
 
-
     public void checkGameOver(String player) {
         if ((Objects.equals(boardLocations[0][0], player) && Objects.equals(boardLocations[0][1], player) && Objects.equals(boardLocations[0][2], player))
             || (Objects.equals(boardLocations[1][0], player) && Objects.equals(boardLocations[1][1], player) && Objects.equals(boardLocations[1][2], player))
@@ -135,7 +117,6 @@ public class ModelImpl implements Model {
     public boolean getGameOver() {
         return gameOver;
     }
-
 
     @Override
     public void addObserver(ModelObserver observer) {

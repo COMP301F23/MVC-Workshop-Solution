@@ -3,18 +3,11 @@ package com.comp301.tictactoe.View;
 import com.comp301.tictactoe.Controller.ClassicMvcController;
 import com.comp301.tictactoe.Model.Model;
 import javafx.event.ActionEvent;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-
-import javax.swing.*;
 
 public class BoardView implements FXComponent {
 

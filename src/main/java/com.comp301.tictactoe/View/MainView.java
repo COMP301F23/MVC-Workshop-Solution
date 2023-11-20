@@ -45,7 +45,7 @@ public class MainView implements FXComponent, ModelObserver {
         return pane;
     }
 
-    // Everytime our update method is called (when ask button is pressed) our view will render!
+    // Everytime our update method is called our view will render!
     @Override
     public void update(Model model) {
         scene.setRoot(render());

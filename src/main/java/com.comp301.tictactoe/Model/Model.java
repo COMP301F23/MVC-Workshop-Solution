@@ -2,10 +2,10 @@ package com.comp301.tictactoe.Model;
 
 public interface Model {
 
-    /** Get's current player */
+    /** Gets the current player */
     String getCurrentPlayer();
 
-    /** Initializes the board */
+    /** Reset's the board/game */
     void make_board();
 
     /** Gets the board */
@@ -26,12 +26,6 @@ public interface Model {
     /** Adds a "O" from the board */
     void addO(int x, int y);
 
-    /** Removes a "X" from the board */
-    void removeX(int x,int y);
-
-    /** Removes a "O" from the board */
-    void removeO(int x, int y);
-
     /** Checks every possible way for a player to win */
     void checkGameOver(String player);
 
@@ -39,7 +33,6 @@ public interface Model {
     void addObserver(ModelObserver observer);
 
     /** Gets the state of the game */
-
     boolean getGameOver();
 
     /**

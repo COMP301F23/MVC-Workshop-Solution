@@ -11,8 +11,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
-import java.awt.*;
-import java.awt.event.*;
+
 
 
 public class TitleView implements FXComponent{
