@@ -16,16 +16,7 @@ public class ControllerImpl implements ClassicMvcController{
     }
 
     public void clickCell(int x,int y) {
-        if (Objects.equals(model.getCurrentPlayer(), "X")) {
-            System.out.println("Hi");
-            model.addX(x,y);
-            return;
-        }
-        if (Objects.equals(model.getCurrentPlayer(), "O")) {
-            model.addO(x,y);
-            System.out.println("Hello");
-            return;
-        }
+        /* TODO: Implement logic for clicking a cell using Model's methods */
     }
 
     public boolean getGameOver() {

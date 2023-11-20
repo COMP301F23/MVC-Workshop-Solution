@@ -11,9 +11,8 @@ public class AppLauncher extends Application {
     @Override
     public void start(Stage stage) {
         // TODO: Create your Model, View, and Controller instances and launch your GUI
-        Model model = new ModelImpl();
-        ClassicMvcController controller = new ControllerImpl(model);
-        MainView view = new MainView(model, controller);
+        // TODO: Replace view with an instance of MainView once you have created your model and controller instances
+        MainView view = null;
 
         stage.setScene(view.getScene());
         stage.setTitle("Tic-Tac-Toe");
@@ -21,6 +20,7 @@ public class AppLauncher extends Application {
         stage.setMaxWidth(500);
         stage.setMinHeight(600);
         stage.setMaxHeight(600);
-        stage.show();
+        //TODO: What is the last thing needed in the start method?
+
     }
 }

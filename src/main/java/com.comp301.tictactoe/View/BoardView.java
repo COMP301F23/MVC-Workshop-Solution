@@ -24,16 +24,18 @@ public class BoardView implements FXComponent {
 
     public Button decide_label(Button b,int x,int y) {
         if (model.isX(x,y)){
-            Image image = new Image("/mvc-workshopRedX.png");
-            ImageView imageView= new ImageView(image);
+            /* TODO: Make the '/mvc-workshopRedX.png' image appear on the button */
+            Image image = null;
+            ImageView imageView= null;
             imageView.setFitHeight(50);
             imageView.setFitWidth(50);
             b.setGraphic(imageView);
             return b;
         }
         if (model.isO(x,y)){
-            Image image = new Image("/mvc-workshopGreenO.png");
-            ImageView imageView= new ImageView(image);
+            /* TODO: Make the '/mvc-workshopGreenO.png' image appear on the button */
+            Image image = null;
+            ImageView imageView= null;
             imageView.setFitHeight(50);
             imageView.setFitWidth(50);
             b.setGraphic(imageView);
@@ -57,10 +59,9 @@ public class BoardView implements FXComponent {
                 button.setText("");
                 int finalRow = row;
                 int finalCol = col;
-                button.setOnAction(
-               (ActionEvent event)-> controller.clickCell(finalRow, finalCol)
-                );
-                Button new_button= decide_label(button,row,col);
+                /* TODO: Implement the logic for clicking a button on the game board
+                *   Hint: This should update the button's location on the game board in the model to be the intended type (X or 0) and in the view */
+                Button new_button= null;
                 pane.add(new_button,row,col);
             }
         }

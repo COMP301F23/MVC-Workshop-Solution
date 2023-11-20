@@ -53,18 +53,12 @@ public class TitleView implements FXComponent{
 
         pane.getChildren().add(pane2);
 
-        Button reset = new Button("Reset");
-        reset.setOnAction((ActionEvent event) -> model.make_board());
-        reset.setAlignment(Pos.CENTER_LEFT);
-        pane.getChildren().add(reset);
+        /* TODO: Implement a reset button */
 
-        if (controller.getGameOver()) {
-            String currentPlayer = model.getCurrentPlayer();
-            Label message = new Label("Congrats! " + currentPlayer + " wins!");
-            message.setFont(Font.font("Arial", FontWeight.BOLD, 20));
-            message.setWrapText(true);
-            pane.getChildren().add(message);
-        }
+
+        /* TODO: Implement a message that appears if the game is over
+        *   and displays the winner (X or O) of the game */
+
 
         return pane;
     }
